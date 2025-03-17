@@ -1,9 +1,9 @@
-#ramen-images {
+#ramen-menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#ramen-images img {
+#ramen-menu img {
   width: 200px;
   height: 200px;
   margin: 10px;
