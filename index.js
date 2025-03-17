@@ -27,3 +27,27 @@ function handleClick(ramen) {
         ${ramen.comment ? `<p>Comment: ${ramen.comment}</p>` : ''}
     `;
 }
+
+function addSubmitListener() {
+   const form = document.getElementById('new-ramen-form');
+   form.addEventListener('submit', (event) => {
+       event.preventDefault();
+       const newRamen = {
+           id: ramens.length + 1,
+           name: document.getElementById('name').value,
+           restaurant: document.getElementById('restaurant').value,
+           image: document.getElementById('image').value,
+           rating: document.getElementById('rating').value,
+           comment: document.getElementById('comment').value
+       };
+       ramens.push(newRamen);
+       const img = document.createElement('img');
+       img.src = newRamen.image;
+       img.alt = newRamen.name;
+       img.addEventListener('click', () => handleClick(newRamen));
+       ramenMenu.appendChild(img);
+       form.reset();
+   });
+}
+
+addSubmitListener();
