@@ -44,10 +44,17 @@ function addSubmitListener() {
        const img = document.createElement('img');
        img.src = newRamen.image;
        img.alt = newRamen.name;
+       img.style.width = '200px';
+       img.style.height = '200px';
        img.addEventListener('click', () => handleClick(newRamen));
        ramenMenu.appendChild(img);
        form.reset();
    });
 }
 
-addSubmitListener();
+function main() {
+    displayRamens();
+    addSubmitListener();
+}
+
+document.addEventListener('DOMContentLoaded', main);
